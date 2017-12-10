@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>jsm</artifactId>
+        <groupId>com.ostsoft.games.jsm</groupId>
+        <version>0.12-SNAPSHOT</version>
+    </parent>
+    <artifactId>editor</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ostsoft.games.jsm</groupId>
+            <artifactId>sm</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ostsoft.games.jsm</groupId>
+            <artifactId>srm</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ostsoft.games.jsm</groupId>
+            <artifactId>compresch</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <jarName>editor</jarName>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>assemble-jar-with-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <finalName>${jarName}</finalName>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <archive>
+                                <manifest>
+                                    <mainClass>com.ostsoft.games.jsm.editor.Editor</mainClass>
+                                </manifest>
+                                <manifestEntries>
+                                    <Trusted-Only>true</Trusted-Only>
+                                    <Permissions>all-permissions</Permissions>
+                                    <Codebase>https://jsm.ostsys.com</Codebase>
+                                    <Application-Name>jSM</Application-Name>
+                                    <Application-Library-Allowable-Codebase>https://jsm.ostsys.com
+                                    </Application-Library-Allowable-Codebase>
+                                </manifestEntries>
+                            </archive>
+                            <descriptors>
+                                <descriptor>src/main/resources/META-INF/assembly-jar-with-dependencies.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,7 @@
+Thanks to:
+ - Nintendo for making this awesome game.
+ - Jathys for making the awesome SMILE.
+ - My cousin that introduced me to Java, and together we have been through a lot of projects.
+ - Metroid Construction community.
+ - JetBrains for making IntelliJ, without it, we would still be stuck with Eclipse, and this project would never have been born.
+ - Tango Desktop Project for making awesome icons.

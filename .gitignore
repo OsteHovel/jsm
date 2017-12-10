@@ -1,0 +1,11 @@
+.idea/
+*.iml
+/bin
+*/target
+/target
+.project
+.classpath
+.DS_Store
+/cache
+network.ini
+sm.smc
